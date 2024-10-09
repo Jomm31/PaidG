@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane prefHeight="452.0" prefWidth="549.0" style="-fx-background-color: #1b2838;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paidg.HelloApplication">
+<Pane prefHeight="439.0" prefWidth="458.0" style="-fx-background-color: #212328;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paidg.HelloController">
    <children>
-      <Button layoutX="216.0" layoutY="164.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #2a475e;" text="Sign in" textFill="#c7d5e0">
+      <Button fx:id="signInButton" layoutX="110.0" layoutY="255.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="245.0" style="-fx-background-color: #2583FF; -fx-background-radius: 10;" text="Sign in" textFill="#c5d3de">
          <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="216.0" layoutY="226.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="117.0" style="-fx-background-color: #2a475e;" text="Register" textFill="#c7d5e0">
+            <Font name="Segoe UI Bold" size="20.0" />
+         </font></Button>
+      <Button  onAction="#onSignUpButtonClick" fx:id="registerButton" layoutX="343.0" layoutY="386.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #2a475e; -fx-background-radius: 10;" text="Sign up" textFill="#c7d5e0">
          <font>
-            <Font name="Arial" size="14.0" />
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font></Button>
+      <TextField layoutX="42.0" layoutY="118.0" prefHeight="42.0" prefWidth="381.0"  style="-fx-background-color: #32353C; -fx-background-radius: 10; -fx-text-fill: white;">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font></TextField>
+      <TextField layoutX="42.0" layoutY="190.0" prefHeight="42.0" prefWidth="381.0"  style="-fx-background-color: #32353C; -fx-background-radius: 10; -fx-text-fill: white;">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font></TextField>
+      <Text fill="#1998f8" layoutX="46.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN IN WITH ACCOUNT NAME">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
          </font>
-      </Button>
+      </Text>
+      <Text fill="#a8a8a8" layoutX="42.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
