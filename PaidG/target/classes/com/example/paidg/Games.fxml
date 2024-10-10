@@ -40,12 +40,12 @@
                               </Text>
                            </children>
                         </Pane>
-                        <Text fill="#c7d5e0" layoutX="24.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Girl Sleeping">
+                        <Text fill="#c7d5e0" layoutX="24.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Sleeping Girl">
                            <font>
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="registerButton3" layoutX="193.0" layoutY="84.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
+                        <Button fx:id="buyTheSleepingGirl" layoutX="193.0" layoutY="84.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
@@ -86,7 +86,7 @@
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="registerButton4" layoutX="182.0" layoutY="88.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
+                        <Button fx:id="buyGodOfWar" layoutX="182.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
@@ -127,7 +127,7 @@
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="registerButton5" layoutX="186.0" layoutY="88.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
+                        <Button fx:id="buyGTAV" layoutX="186.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
@@ -168,7 +168,7 @@
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="registerButton" layoutX="179.0" layoutY="88.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
+                        <Button fx:id="buyStickman" layoutX="179.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
@@ -209,7 +209,7 @@
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="registerButton1" layoutX="193.0" layoutY="88.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
+                        <Button fx:id="buyMinecraft" layoutX="193.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
@@ -250,7 +250,7 @@
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="registerButton2" layoutX="193.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
+                        <Button fx:id="buyRiseOfKingdoms" layoutX="193.0" layoutY="88.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="99.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="BUY" textFill="#d7dde1">
                            <font>
                               <Font name="Segoe UI Bold" size="14.0" />
                            </font>
@@ -259,6 +259,11 @@
                   </Pane>
                </children>
             </Pane>
+            <Button fx:id="GamesBought" layoutX="893.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="133.0" style="-fx-background-color: #5B8029; -fx-background-radius: 10;" text="Games bought" textFill="#d7dde1">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
   </content>
 </ScrollPane>

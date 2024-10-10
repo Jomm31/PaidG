@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="776.0" prefWidth="658.0" style="-fx-background-color: #1b2838;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.paidg.GamesBoughtController">
+   <children>
+      <TitledPane layoutX="14.0" layoutY="22.0" prefHeight="266.0" prefWidth="633.0" text="Game1">
+         <content>
+            <TableView prefHeight="335.0" prefWidth="658.0">
+              <columns>
+                  <TableColumn prefWidth="60.0" text="User ID" />
+                <TableColumn prefWidth="60.0" text="Game ID" />
+                <TableColumn maxWidth="300.0" prefWidth="300.0" text="Game Title" />
+                  <TableColumn prefWidth="100.0" text="Date" />
+                  <TableColumn prefWidth="130.0" text="Transaction ID" />
+              </columns>
+            </TableView>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
