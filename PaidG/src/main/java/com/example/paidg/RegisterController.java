@@ -9,13 +9,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class RegisterController {
+
     @FXML
     private TextField firstNameField;
     @FXML
@@ -34,19 +39,43 @@ public class RegisterController {
     private DatePicker birthdayPicker;
     @FXML
     private Button signUpButton;
+    @FXML
+    private Button signInButton;
 
     @FXML
     protected void onSignUpButtonClick() {
-        // Validation and sign-up logic
         if (firstNameField.getText().isEmpty() || lastNameField.getText().isEmpty() ||
                 emailField.getText().isEmpty() || passwordField.getText().isEmpty()) {
             showAlert("Error", "All fields must be filled out.");
             return;
         }
 
-        // Simulate successful sign-up
-        showAlert("Success", "Account created successfully!");
-        goBackToSignIn();
+        // Save user to database
+        boolean isSaved = saveUserToDatabase(firstNameField.getText(), lastNameField.getText(), emailField.getText(), passwordField.getText());
+
+        if (isSaved) {
+            showAlert("Success", "Account created successfully!");
+            goBackToSignIn();
+        } else {
+            showAlert("Error", "Account creation failed.");
+        }
+    }
+
+    @FXML
+    private void onSignInButtonClick() {
+        try {
+            // Load the new scene (games.fxml)
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("games.fxml"));
+            Scene scene = new Scene(pane);
+
+            // Get the current stage and set the new scene
+            Stage stage = (Stage) signInButton.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to load games page.");
+        }
     }
 
     private void showAlert(String title, String message) {
@@ -60,13 +89,39 @@ public class RegisterController {
     private void goBackToSignIn() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AccPage.fxml"));
-            Pane signInPane = fxmlLoader.load();  // Load as Pane
-            Stage stage = (Stage) signUpButton.getScene().getWindow(); // Get the current stage
+            Pane signInPane = fxmlLoader.load();
+            Stage stage = (Stage) signUpButton.getScene().getWindow();
             Scene scene = new Scene(signInPane);
-            stage.setScene(scene); // Set the new scene
-            stage.show(); // Show the updated stage
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // Handle the exception
+            e.printStackTrace();
+            showAlert("Error", "Failed to load sign-in page.");
         }
+    }
+
+    private boolean saveUserToDatabase(String firstName, String lastName, String email, String password) {
+        Connection connection = Database.connectDb();
+        if (connection != null) {
+            String sql = "INSERT INTO user (FirstName, LastName, Email, Password) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+                pstmt.setString(1, firstName);
+                pstmt.setString(2, lastName);
+                pstmt.setString(3, email);
+                pstmt.setString(4, password); // Consider hashing this
+                pstmt.executeUpdate();
+                return true; // User saved successfully
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false; // Failed to save user
+            } finally {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return false; // No connection
     }
 }
